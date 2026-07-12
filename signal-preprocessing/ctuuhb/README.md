@@ -13,7 +13,6 @@ https://physionet.org/content/ctu-uhb-ctgdb/1.0.0/
   - 标签规则：pH ≥ 7.15 → 0（正常），pH < 7.15 → 1（酸血症）
 - `three_class_preprocess_ctuuhb.py` — 三分类预处理
   - 标签规则：pH > 7.2 → 0（正常），7.15 ≤ pH ≤ 7.2 → 1（临界），pH < 7.15 → 2（酸血症）
-- `denoised_result_ctuuhb.zip` — 已处理好的去噪结果，可直接用于下游模型训练，避免重复运行数小时的预处理
 
 ## 使用方法
 
