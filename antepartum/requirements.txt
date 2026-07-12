@@ -1,0 +1,7 @@
+tensorflow>=2.13
+numpy
+pandas
+scikit-learn
+scipy
+matplotlib
+PyEMD          # 仅 preprocessing/ 需要
