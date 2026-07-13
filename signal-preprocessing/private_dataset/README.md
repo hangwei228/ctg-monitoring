@@ -12,8 +12,6 @@
 
 - `binary_preprocess.py` — 二分类预处理
   - 标签规则：有反应 → 0（正常），无反应 + 可疑 → 1（合并为异常）
-- `three_class_preprocess.py` — 三分类预处理
-  - 标签规则：有反应 → 0，无反应 → 1，可疑 → 2
 
 ## 使用方法
 
@@ -34,7 +32,6 @@ python three_class_preprocess.py
 private_dataset/
 ├── README.md
 ├── binary_preprocess.py
-├── three_class_preprocess.py
 └── data/                       # 使用者自建，不上传
     ├── raw/                    # 私有原始数据
     └── output/                 # 运行后自动生成
