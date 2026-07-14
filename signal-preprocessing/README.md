@@ -57,3 +57,18 @@ wfdb   # 仅 ctuuhb/ 需要
   - 三分类：正常 / 可疑 / 异常
 
 未达成三人一致的样本不纳入训练数据，以保证标签质量。
+
+## 引用与相关成果 Citation & Related Achievements
+
+如果本项目对你的研究有帮助，请引用以下：
+### 论文 Paper
+
+- Fei, Y., Chen, F., He, L., Chen, J., Hao, Y., Li, X., Liu, G., Chen, Q., Li, L., & Wei, H.\* (2022). Intelligent classification of antenatal cardiotocography signals via multimodal bidirectional gated recurrent units. *Biomedical Signal Processing and Control*, 78, 104008.
+
+  ### 数据集引用 Dataset
+
+本项目 `signal-preprocessing/ctuuhb/` 模块使用了 CTU-UHB Intrapartum Cardiotocography Database（PhysioNet 公开数据集）。如使用请同时引用：
+
+- Chudáček, V., Spilka, J., Burša, M., Janků, P., Hruban, L., Huptych, M., & Lhotská, L. (2014). Open access intrapartum CTG database. *BMC Pregnancy and Childbirth*, 14, 16. https://doi.org/10.1186/1471-2393-14-16
+
+数据集官方地址：https://physionet.org/content/ctu-uhb-ctgdb/1.0.0/
