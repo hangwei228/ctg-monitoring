@@ -14,7 +14,7 @@
 
 输出：`fhr_{train,val,test}.csv`、`uc_*.csv`、`fm_*.csv`、`label_*.csv`。
 
-> 信号去噪由分类模型中的 **EVT-ADB** 模块完成，本脚本不做去噪。
+> 本脚本不做去噪。
 
 ## 文件
 
