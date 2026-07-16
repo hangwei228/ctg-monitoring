@@ -11,7 +11,6 @@
 .
 ├── classification/        # 多模态 CNN 分类（核心代码）
 │   ├── model.py           # 三路 1D 残差 CNN + SE 注意力 + EVT-ADB 去噪 + 临床特征融合
-│   ├── evt_adb.py         # EVT-ADB 去噪模块
 │   ├── data_loader.py     # 数据加载、CTG 临床特征、分层划分、归一化
 │   ├── run.py             # 训练 + 评估入口
 │   └── README.md
