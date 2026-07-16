@@ -29,7 +29,7 @@
 cd preprocessing
 pip install -r ../requirements.txt   # 需 PyEMD
 python 三分类预处理.py
-python 二分类预处理.py
+python binary_preprocess.py
 ```
 
 > 注：分类模块读取的是已准备好的 `fhrbs.csv / uc.csv / fm.csv / label.csv / gest+age.csv`
