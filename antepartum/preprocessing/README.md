@@ -28,7 +28,7 @@
 ```bash
 cd preprocessing
 pip install -r ../requirements.txt   # 需 PyEMD
-python 三分类预处理.py
+python three_class_preprocess.py
 python binary_preprocess.py
 ```
 
