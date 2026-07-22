@@ -20,11 +20,10 @@
 
 ```bash
 python binary_preprocess.py
-# 或
-python three_class_preprocess.py
+
 ```
 
-结果会输出到 `./data/output/binary_result/` 或 `./data/output/three_class_result/`。
+结果会输出到 `./data/output/binary_result/` 。
 
 ## 目录结构（运行后）
 
