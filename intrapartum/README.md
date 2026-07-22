@@ -37,6 +37,17 @@
 
 如需修改数据路径，编辑 `config.py` 中的 `DATA_DIR`。
 
+## 数据集介绍
+
+公共CTU-UHB数据集是根据胎儿出生之后的脐动脉血ph值对样本进行分类，频率下采样到1Hz,二分类标签是ph>=7.15为正常，ph<7.15是1酸血症；三分类是ph>7.2/7.15-7.2/<7.15三类；
+数据集官方地址：https://physionet.org/content/ctu-uhb-ctgdb/1.0.0/
+
+使用请同时引用：
+
+- Chudáček, V., Spilka, J., Burša, M., Janků, P., Hruban, L., Huptych, M., & Lhotská, L. (2014). Open access intrapartum CTG database. *BMC Pregnancy and Childbirth*, 14, 16. https://doi.org/10.1186/1471-2393-14-16
+
+
+
 ## 训练
 
 ```bash
@@ -91,4 +102,7 @@ curl -X POST http://localhost:8000/predict \
   -F "uc=@uc_test_0.csv" \
   -F "fm=@fm_test_0.csv"
 ```
+## 引用与相关成果 Citation & Related Achievements
 
+如果本项目对你的研究有帮助，请引用以下：
+- **[产时 Intrapartum]** Yao, H., Lin, X., Tang, L., Liu, G., Chen, Q., & Wei, H.\* (2026). Dual adaptive soft thresholding multimodal networks with contrastive augmentation for intrapartum fetal monitoring. *Engineering Applications of Artificial Intelligence*, 170, 114179. https://doi.org/10.1016/j.engappai.2026.114179
