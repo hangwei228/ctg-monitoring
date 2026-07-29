@@ -1,6 +1,6 @@
-# CTG 胎儿健康分类 
+# CTG 胎儿健康分类
 
-基于 DAST-MMNet 下游分类模型，使用 FHR、UC、FM 三模态信号经 AFF1D 融合后进行胎儿健康状态二分类。
+基于一种双自适应软阈值多模态网络（Dual Adaptive Soft Thresholding Multimodal Networks ，DAST-MMNet），本模型使用胎心率（FHR)、宫缩压（UC）信号与母体临床数据三模态数据，可实现特征融合过程中动态抑制UC信号的外在噪声与跨模态干扰，进行胎儿健康状态二分类。
 
 ## 项目结构
 
@@ -26,11 +26,11 @@
 
 数据文件位于项目上级目录的 `筛选_去噪结果_ctuuhb(1)/筛选_去噪结果_ctuuhb/ctuuhb_result_2/`，包含：
 
-| 文件 | 说明 |
-|------|------|
-| `fhr_{split}.csv` | 胎心率 (900 点) |
-| `uc_{split}.csv` | 宫缩压力 (900 点) |
-| `fm_{split}.csv` | 胎动 (900 点) |
+| 文件                  | 说明                  |
+| --------------------- | --------------------- |
+| `fhr_{split}.csv`   | 胎心率 (900 点)       |
+| `uc_{split}.csv`    | 宫缩压力 (900 点)     |
+| `fm_{split}.csv`    | 胎动 (900 点)         |
 | `label_{split}.csv` | 标签 (0=正常, 1=异常) |
 
 `{split}` 为 `train` / `val` / `test`。
@@ -46,8 +46,6 @@
 
 - Chudáček, V., Spilka, J., Burša, M., Janků, P., Hruban, L., Huptych, M., & Lhotská, L. (2014). Open access intrapartum CTG database. *BMC Pregnancy and Childbirth*, 14, 16. https://doi.org/10.1186/1471-2393-14-16
 
-
-
 ## 训练
 
 ```bash
@@ -55,7 +53,6 @@ python train.py
 ```
 
 输出：best_model.keras、控制台打印测试集评估指标。
-
 
 ## API 服务
 
@@ -77,11 +74,11 @@ python api.py
 
 请求参数 (三个 CSV 文件)：
 
-| 字段 | 类型 | 说明 |
-|------|------|------|
-| `fhr` | file | 胎心率 CSV (1×900, 无表头) |
-| `uc` | file | 宫缩压力 CSV (1×900, 无表头) |
-| `fm` | file | 胎动 CSV (1×900, 无表头) |
+| 字段    | 类型 | 说明                          |
+| ------- | ---- | ----------------------------- |
+| `fhr` | file | 胎心率 CSV (1×900, 无表头)   |
+| `uc`  | file | 宫缩压力 CSV (1×900, 无表头) |
+| `fm`  | file | 胎动 CSV (1×900, 无表头)     |
 
 响应：
 
@@ -102,7 +99,15 @@ curl -X POST http://localhost:8000/predict \
   -F "uc=@uc_test_0.csv" \
   -F "fm=@fm_test_0.csv"
 ```
+
+#### **实验结果**
+
+| Model                 | Research variables     | Division criteria | Sensitivity | Specificity | F1-score | AUC    |
+| :-------------------- | :--------------------- | :---------------- | :---------- | :---------- | :------- | :----- |
+| DAST-MMNet (Our work) | FHR, UC, Clinical data | pH < 7.15         | 0.9857      | 0.9745      | 0.9752   | 0.9921 |
+
 ## 引用与相关成果 Citation & Related Achievements
 
 如果本项目对你的研究有帮助，请引用以下：
-- **[产时 Intrapartum]** Yao, H., Lin, X., Tang, L., Liu, G., Chen, Q., & Wei, H.\* (2026). Dual adaptive soft thresholding multimodal networks with contrastive augmentation for intrapartum fetal monitoring. *Engineering Applications of Artificial Intelligence*, 170, 114179. https://doi.org/10.1016/j.engappai.2026.114179
+- **[产时 Intrapartum]** Yao, H., Lin, X., Tang, L., Liu, G., Chen, Q., & Wei, H.\* (2026). Dual adaptive soft thresholding multimodal networks with contrastive augmentation for intrapartum fetal monitoring. *Engineering Applications of Artificial Intell
+igence*, 170, 114179. https://doi.org/10.1016/j.engappai.2026.114179
